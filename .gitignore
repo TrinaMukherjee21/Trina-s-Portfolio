@@ -1,0 +1,9 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Git directory (redundant but safe)
+.git/
+
+# Node modules (if any in future)
+node_modules/
