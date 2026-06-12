@@ -824,61 +824,38 @@
             height: 24px;
         }
 
+        /* Project-Specific Backgrounds */
+        .bg-alphasignal { background-image: url('bgImages/alphasignal.png'); }
+        .bg-stylegenie { background-image: url('bgImages/styleGenie.png'); }
+        .bg-bankfraud { background-image: url('bgImages/Bank Fraud detection.png'); }
+        .bg-omnisales { background-image: url('bgImages/OmniSales.png'); }
+
         .project-content {
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             transition: max-height 0.4s ease, opacity 0.4s ease;
             margin-top: 0;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
         }
 
         .project-row:hover .project-content {
-            max-height: 1200px;
+            max-height: 800px;
             opacity: 1;
             margin-top: 30px;
         }
 
         .project-inner {
+            background: rgba(10, 10, 15, 0.5);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            padding-left: 70px;
-            max-width: 800px;
-        }
-
-        .project-desc-full {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            line-height: 1.5;
-        }
-
-        .project-stack-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .project-image-preview {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 12px;
+            gap: 25px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 10px;
-            transition: var(--transition);
-        }
-
-        .project-details-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        @media (max-width: 1024px) {
-            .project-details-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
         }
 
         /* Override link behavior for rows */
@@ -1758,22 +1735,19 @@
                         <div class="project-cat">Real-Time / Fintech</div>
                         <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-content bg-alphasignal">
                         <div class="project-inner">
                             <p class="project-desc-full">A real-time trading intelligence platform that aggregates financial news, social media discussions, and market data to generate signals for US and Indian stocks.</p>
-                            <div class="project-details-grid">
-                                <img src="bgImages/alphasignal.png" alt="AlphaSignal Preview" class="project-image-preview">
-                                <div class="project-stack-chips">
-                                    <span class="chip">React.js</span>
-                                    <span class="chip">FastAPI</span>
-                                    <span class="chip">Apache Kafka</span>
-                                    <span class="chip">PostgreSQL</span>
-                                    <span class="chip">Redis</span>
-                                    <span class="chip">WebSockets</span>
-                                    <span class="chip">FinBERT</span>
-                                    <span class="chip">PyTorch</span>
-                                    <span class="chip">Docker</span>
-                                </div>
+                            <div class="project-stack-chips">
+                                <span class="chip">React.js</span>
+                                <span class="chip">FastAPI</span>
+                                <span class="chip">Apache Kafka</span>
+                                <span class="chip">PostgreSQL</span>
+                                <span class="chip">Redis</span>
+                                <span class="chip">WebSockets</span>
+                                <span class="chip">FinBERT</span>
+                                <span class="chip">PyTorch</span>
+                                <span class="chip">Docker</span>
                             </div>
                         </div>
                     </div>
@@ -1789,19 +1763,16 @@
                         <div class="project-cat">AI / Fashion</div>
                         <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-content bg-stylegenie">
                         <div class="project-inner">
                             <p class="project-desc-full">AI-powered fashion platform with Virtual Try-On, color analysis, and personalized styling assistant.</p>
-                            <div class="project-details-grid">
-                                <img src="bgImages/styleGenie.png" alt="Style Genie Preview" class="project-image-preview">
-                                <div class="project-stack-chips">
-                                    <span class="chip">Python</span>
-                                    <span class="chip">Flask</span>
-                                    <span class="chip">React</span>
-                                    <span class="chip">Next.js</span>
-                                    <span class="chip">OpenAI API</span>
-                                    <span class="chip">Gradio</span>
-                                </div>
+                            <div class="project-stack-chips">
+                                <span class="chip">Python</span>
+                                <span class="chip">Flask</span>
+                                <span class="chip">React</span>
+                                <span class="chip">Next.js</span>
+                                <span class="chip">OpenAI API</span>
+                                <span class="chip">Gradio</span>
                             </div>
                         </div>
                     </div>
@@ -1817,18 +1788,15 @@
                         <div class="project-cat">ML / Security</div>
                         <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-content bg-bankfraud">
                         <div class="project-inner">
                             <p class="project-desc-full">Real-time fraud monitoring dashboard with XGBoost + SMOTE-ENN, 98.9% ROC-AUC, RBAC + JWT auth.</p>
-                            <div class="project-details-grid">
-                                <img src="bgImages/Bank Fraud detection.png" alt="Bank Fraud Detection Preview" class="project-image-preview">
-                                <div class="project-stack-chips">
-                                    <span class="chip">Python</span>
-                                    <span class="chip">Flask</span>
-                                    <span class="chip">XGBoost</span>
-                                    <span class="chip">Chart.js</span>
-                                    <span class="chip">JWT</span>
-                                </div>
+                            <div class="project-stack-chips">
+                                <span class="chip">Python</span>
+                                <span class="chip">Flask</span>
+                                <span class="chip">XGBoost</span>
+                                <span class="chip">Chart.js</span>
+                                <span class="chip">JWT</span>
                             </div>
                         </div>
                     </div>
@@ -1844,18 +1812,15 @@
                         <div class="project-cat">Analytics / ML</div>
                         <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-content bg-omnisales">
                         <div class="project-inner">
                             <p class="project-desc-full">Interactive CRM analytics dashboard with K-Means clustering, Decision Tree, and real-time business insight visualizations.</p>
-                            <div class="project-details-grid">
-                                <img src="bgImages/OmniSales.png" alt="OmniSales Preview" class="project-image-preview">
-                                <div class="project-stack-chips">
-                                    <span class="chip">Python</span>
-                                    <span class="chip">Streamlit</span>
-                                    <span class="chip">Scikit-learn</span>
-                                    <span class="chip">Pandas</span>
-                                    <span class="chip">K-Means</span>
-                                </div>
+                            <div class="project-stack-chips">
+                                <span class="chip">Python</span>
+                                <span class="chip">Streamlit</span>
+                                <span class="chip">Scikit-learn</span>
+                                <span class="chip">Pandas</span>
+                                <span class="chip">K-Means</span>
                             </div>
                         </div>
                     </div>
