@@ -59,6 +59,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
         }
 
         @media (max-width: 768px) {
@@ -737,10 +738,34 @@
         }
 
         /* --- Projects Section (Hover-Expand List) --- */
+        /* --- Projects Section (Glassmorphic) --- */
+        #projects {
+            background-image: url('bgImages/alphasignal.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        #projects::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 10, 15, 0.7);
+            backdrop-filter: blur(15px);
+            z-index: -1;
+        }
+
         .projects-list {
             display: flex;
             flex-direction: column;
             width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 20px;
         }
 
         .project-row {
@@ -831,6 +856,20 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+        }
+
+        .project-image-preview {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+
+        .project-row:hover .project-image-preview {
+            transform: scale(1.02);
+            border-color: var(--accent-color);
         }
 
         /* Override link behavior for rows */
@@ -1700,86 +1739,12 @@
     <section id="projects">
         <h2 class="reveal" style="font-size: 3.5rem; margin-bottom: 60px;">Featured Work</h2>
         <div class="projects-list reveal">
-            <!-- Project 01 -->
-            <a href="https://stylegenie-frontend.onrender.com" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger">
+            
+            <!-- Project 01: AlphaSignal -->
+            <a href="https://alpha-signal-two.vercel.app/" target="_blank" class="project-row-link">
+                <div class="project-row reveal-stagger glass-card">
                     <div class="project-header">
                         <div class="project-num">01</div>
-                        <div class="project-title">Style Genie</div>
-                        <div class="project-cat">AI / Fashion</div>
-                        <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-inner">
-                            <p class="project-desc-full">AI-powered fashion platform with Virtual Try-On, color analysis, and personalized styling assistant.</p>
-                            <div class="project-stack-chips">
-                                <span class="chip">Python</span>
-                                <span class="chip">Flask</span>
-                                <span class="chip">React</span>
-                                <span class="chip">Next.js</span>
-                                <span class="chip">OpenAI API</span>
-                                <span class="chip">Gemini API</span>
-                                <span class="chip">HuggingFace</span>
-                                <span class="chip">FAISS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Project 02 -->
-            <a href="https://bank-fraud-detection-1-cfcb.onrender.com/login?next=%2F" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger">
-                    <div class="project-header">
-                        <div class="project-num">02</div>
-                        <div class="project-title">Bank Fraud Detection</div>
-                        <div class="project-cat">ML / Security</div>
-                        <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-inner">
-                            <p class="project-desc-full">Real-time fraud monitoring dashboard with XGBoost + SMOTE-ENN, 98.9% ROC-AUC, RBAC + JWT auth, REST API ~85ms latency.</p>
-                            <div class="project-stack-chips">
-                                <span class="chip">Python</span>
-                                <span class="chip">Flask</span>
-                                <span class="chip">XGBoost</span>
-                                <span class="chip">Chart.js</span>
-                                <span class="chip">SQLite/MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Project 03 -->
-            <a href="https://omnisales-fsc5s8bi6wn35gyf8asijx.streamlit.app/" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger">
-                    <div class="project-header">
-                        <div class="project-num">03</div>
-                        <div class="project-title">OmniSales CRM</div>
-                        <div class="project-cat">Analytics / ML</div>
-                        <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-inner">
-                            <p class="project-desc-full">Interactive CRM analytics dashboard with K-Means clustering, Decision Tree, and real-time business insight visualizations.</p>
-                            <div class="project-stack-chips">
-                                <span class="chip">Python</span>
-                                <span class="chip">Streamlit</span>
-                                <span class="chip">Scikit-learn</span>
-                                <span class="chip">Pandas</span>
-                                <span class="chip">Matplotlib</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Project 04 -->
-            <a href="https://alpha-signal-two.vercel.app/" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger">
-                    <div class="project-header">
-                        <div class="project-num">04</div>
                         <div class="project-title">AlphaSignal</div>
                         <div class="project-cat">Real-Time / Fintech</div>
                         <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
@@ -1787,6 +1752,7 @@
                     <div class="project-content">
                         <div class="project-inner">
                             <p class="project-desc-full">A real-time trading intelligence platform that aggregates financial news, social media discussions, and market data to generate signals for US and Indian stocks.</p>
+                            <img src="bgImages/alphasignal.png" alt="AlphaSignal Preview" class="project-image-preview">
                             <div class="project-stack-chips">
                                 <span class="chip">React.js</span>
                                 <span class="chip">FastAPI</span>
@@ -1794,9 +1760,79 @@
                                 <span class="chip">PostgreSQL</span>
                                 <span class="chip">Redis</span>
                                 <span class="chip">WebSockets</span>
-                                <span class="chip">FinBERT</span>
-                                <span class="chip">PyTorch</span>
-                                <span class="chip">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 02: Style Genie -->
+            <a href="https://stylegenie-frontend.onrender.com" target="_blank" class="project-row-link">
+                <div class="project-row reveal-stagger glass-card">
+                    <div class="project-header">
+                        <div class="project-num">02</div>
+                        <div class="project-title">Style Genie</div>
+                        <div class="project-cat">AI / Fashion</div>
+                        <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-inner">
+                            <p class="project-desc-full">AI-powered fashion platform with Virtual Try-On, color analysis, and personalized styling assistant.</p>
+                            <img src="bgImages/styleGenie.png" alt="Style Genie Preview" class="project-image-preview">
+                            <div class="project-stack-chips">
+                                <span class="chip">Python</span>
+                                <span class="chip">Flask</span>
+                                <span class="chip">React</span>
+                                <span class="chip">Next.js</span>
+                                <span class="chip">OpenAI API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 03: Bank Fraud Detection -->
+            <a href="https://bank-fraud-detection-1-cfcb.onrender.com/login?next=%2F" target="_blank" class="project-row-link">
+                <div class="project-row reveal-stagger glass-card">
+                    <div class="project-header">
+                        <div class="project-num">03</div>
+                        <div class="project-title">Bank Fraud Detection</div>
+                        <div class="project-cat">ML / Security</div>
+                        <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-inner">
+                            <p class="project-desc-full">Real-time fraud monitoring dashboard with XGBoost + SMOTE-ENN, 98.9% ROC-AUC, RBAC + JWT auth.</p>
+                            <img src="bgImages/Bank Fraud detection.png" alt="Bank Fraud Detection Preview" class="project-image-preview">
+                            <div class="project-stack-chips">
+                                <span class="chip">Python</span>
+                                <span class="chip">Flask</span>
+                                <span class="chip">XGBoost</span>
+                                <span class="chip">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 04: OmniSales CRM -->
+            <a href="https://omnisales-fsc5s8bi6wn35gyf8asijx.streamlit.app/" target="_blank" class="project-row-link">
+                <div class="project-row reveal-stagger glass-card">
+                    <div class="project-header">
+                        <div class="project-num">04</div>
+                        <div class="project-title">OmniSales CRM</div>
+                        <div class="project-cat">Analytics / ML</div>
+                        <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-inner">
+                            <p class="project-desc-full">Interactive CRM analytics dashboard with K-Means clustering, Decision Tree, and real-time business insight visualizations.</p>
+                            <img src="bgImages/OmniSales.png" alt="OmniSales Preview" class="project-image-preview">
+                            <div class="project-stack-chips">
+                                <span class="chip">Python</span>
+                                <span class="chip">Streamlit</span>
+                                <span class="chip">Scikit-learn</span>
+                                <span class="chip">Pandas</span>
                             </div>
                         </div>
                     </div>
