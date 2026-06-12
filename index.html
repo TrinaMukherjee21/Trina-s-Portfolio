@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -17,9 +17,8 @@
             --text-color: #F0EEE9;
             --accent-color: #00D4C8;
             --secondary-bg: #14141C;
-            --font-display: 'Outfit', sans-serif;
-            --font-body: 'Inter', sans-serif;
             --font-editorial: 'Cormorant Garamond', serif;
+            --font-body: 'Sora', sans-serif;
             --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             --stagger-delay: 100ms;
         }
@@ -37,7 +36,6 @@
             color: var(--text-color);
             font-family: var(--font-body);
             overflow-x: hidden;
-            letter-spacing: -0.01em;
         }
 
         body {
@@ -61,7 +59,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: relative;
         }
 
         @media (max-width: 768px) {
@@ -282,42 +279,10 @@
         }
 
         /* --- Typography --- */
-        h1, h2, h3, h4 {
-            font-family: var(--font-display);
+        h1, h2, h3 {
+            font-family: var(--font-editorial);
             font-weight: 600;
             line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 10vw, 6rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: -0.04em;
-            background: linear-gradient(135deg, #fff 30%, rgba(255, 255, 255, 0.5) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-role {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            font-weight: 400;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 0.4em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-tagline {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            opacity: 0.6;
-            font-weight: 300;
-            line-height: 1.8;
         }
 
         .reveal-text {
@@ -771,35 +736,10 @@
             margin-bottom: 20px;
         }
 
-        /* --- Projects Section (Hover-Expand List) --- */
-        /* --- Projects Section (Glassmorphic) --- */
-        #projects {
-            background-image: url('bgImages/alphasignal.png');
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        #projects::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(10, 10, 15, 0.7);
-            backdrop-filter: blur(15px);
-            z-index: -1;
-        }
-
         .projects-list {
             display: flex;
             flex-direction: column;
             width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 30px;
-            padding: 20px;
         }
 
         .project-row {
@@ -867,7 +807,7 @@
         }
 
         .project-row:hover .project-content {
-            max-height: 1200px;
+            max-height: 400px;
             opacity: 1;
             margin-top: 30px;
         }
@@ -1141,18 +1081,6 @@
             opacity: 0.5;
         }
 
-        /* --- Shared Section Headers --- */
-        #about h2, #experience h2, #projects h2, #design h2, #contact h2 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 50px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #fff 40%, rgba(255, 255, 255, 0.4) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         .scroll-top {
             width: 40px;
             height: 40px;
@@ -1163,22 +1091,6 @@
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 16px 36px;
-            border-radius: 100px;
-            font-weight: 500;
-            font-family: var(--font-display);
-            letter-spacing: 0.02em;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
-            gap: 10px;
         }
 
         .scroll-top:hover {
@@ -1672,7 +1584,7 @@
 
     <!-- SECTION: ABOUT -->
     <section id="about">
-        <h2 class="reveal">About Me</h2>
+        <h2 class="reveal" style="font-size: 3.5rem; margin-bottom: 60px;">About Me</h2>
         <div class="about-container">
             <div class="about-image-wrapper reveal" id="profileImgWrapper">
                 <img src="myimage.jpeg" alt="Trina Mukherjee" class="about-img">
@@ -1771,7 +1683,7 @@
 
     <!-- SECTION: EXPERIENCE -->
     <section id="experience">
-        <h2 class="reveal">Professional Journey</h2>
+        <h2 class="reveal" style="font-size: 3.5rem; margin-bottom: 60px;">Professional Journey</h2>
         <div class="experience-timeline reveal">
             <div class="exp-card reveal-stagger">
                 <div class="exp-date">Oct 2024 – Jan 2025</div>
@@ -1808,12 +1720,12 @@
 
     <!-- SECTION: PROJECTS -->
     <section id="projects">
-        <h2 class="reveal">Featured Work</h2>
+        <h2 class="reveal" style="font-size: 3.5rem; margin-bottom: 60px;">Featured Work</h2>
         <div class="projects-list reveal">
             
             <!-- Project 01: AlphaSignal -->
             <a href="https://alpha-signal-two.vercel.app/" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger glass-card">
+                <div class="project-row reveal-stagger">
                     <div class="project-header">
                         <div class="project-num">01</div>
                         <div class="project-title">AlphaSignal</div>
@@ -1844,7 +1756,7 @@
 
             <!-- Project 02: Style Genie -->
             <a href="https://stylegenie-frontend.onrender.com" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger glass-card">
+                <div class="project-row reveal-stagger">
                     <div class="project-header">
                         <div class="project-num">02</div>
                         <div class="project-title">Style Genie</div>
@@ -1872,7 +1784,7 @@
 
             <!-- Project 03: Bank Fraud Detection -->
             <a href="https://bank-fraud-detection-1-cfcb.onrender.com/login?next=%2F" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger glass-card">
+                <div class="project-row reveal-stagger">
                     <div class="project-header">
                         <div class="project-num">03</div>
                         <div class="project-title">Bank Fraud Detection</div>
@@ -1899,7 +1811,7 @@
 
             <!-- Project 04: OmniSales CRM -->
             <a href="https://omnisales-fsc5s8bi6wn35gyf8asijx.streamlit.app/" target="_blank" class="project-row-link">
-                <div class="project-row reveal-stagger glass-card">
+                <div class="project-row reveal-stagger">
                     <div class="project-header">
                         <div class="project-num">04</div>
                         <div class="project-title">OmniSales CRM</div>
