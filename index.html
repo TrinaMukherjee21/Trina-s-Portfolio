@@ -425,7 +425,7 @@
             font-size: clamp(0.9rem, 2vw, 1.1rem);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .hero-ctas {
                 flex-direction: column;
                 width: 100%;
@@ -610,9 +610,10 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
 
@@ -744,7 +745,7 @@
 
         .project-row {
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px 0;
+            padding: clamp(20px, 5vh, 40px) 0;
             transition: var(--transition);
             cursor: pointer;
             overflow: hidden;
@@ -758,9 +759,16 @@
 
         .project-header {
             display: grid;
-            grid-template-columns: 50px 2fr 1fr 50px;
+            grid-template-columns: 30px 1fr auto;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .project-header {
+                grid-template-columns: 50px 2fr 1fr 50px;
+                gap: 20px;
+            }
         }
 
         .project-num {
@@ -807,7 +815,7 @@
         }
 
         .project-row:hover .project-content {
-            max-height: 400px;
+            max-height: 2000px;
             opacity: 1;
             margin-top: 30px;
         }
@@ -816,8 +824,8 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            padding-left: 70px;
-            max-width: 800px;
+            padding-left: clamp(0px, 5vw, 70px);
+            max-width: 100%;
         }
 
         .project-desc-full {
@@ -843,9 +851,16 @@
 
         .project-details-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
             align-items: start;
+        }
+
+        @media (min-width: 1024px) {
+            .project-details-grid {
+                grid-template-columns: 1.5fr 1fr;
+                gap: 40px;
+            }
         }
 
         @media (max-width: 1024px) {
